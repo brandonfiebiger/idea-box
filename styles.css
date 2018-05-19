@@ -27,9 +27,8 @@ span {
 }
 
 .user-input-form {
-  grid-area: 3 / 2/ 6 / 3;
+  grid-area: 3 / 2/ 5 / 3;
   display: grid;
-  grid-template:;
   grid-row-gap: 1px;
 }
 
@@ -41,7 +40,9 @@ input {
 
 .save-button {
    width: 100%;
-   height: 4em;
+   background-color: #4CA59E;
+   height: 5vh;
+   color: #FFFFFF;
 
 }
 
