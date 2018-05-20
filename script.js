@@ -33,14 +33,15 @@ function addNewIdea(){
   this.body = $('.user-idea').val();
   var ideaToStore = { id: this.id, title: this.title, body: this.body, quality: "swill"};
   var stringifiedIdea = JSON.stringify(ideaToStore);
-  console.log(stringifiedIdea);
-  localStorage.setItem(this.id, stringifiedIdea);   
+  localStorage.setItem(this.id, stringifiedIdea); 
+  var retreivedIdea = localStorage.getItem(this.id);
+  var parsedIdea = JSON.parse(retreivedIdea); 
+  console.log(parsedIdea);
+
+
 }
 
 
 
 
          
-// var ideaToStore = { id: "new id", title: "a new title", body: "a hot body"};
- // var stringifiedIdea = JSON.stringify(ideaToStore);
-// localStorage.setItem(id, stringifiedIdea);   
