@@ -56,3 +56,13 @@ input::placeholder {
   justify-content: center;
 }
 
+.idea-display{
+  width: 50%;
+}
+
+
+.up-vote, .down-vote{
+  width: 2vw;
+
+}
+
