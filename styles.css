@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans'
+  font-family: 'Open Sans';
   font-weight: 400;
   height: 100vh;
 }
@@ -34,6 +34,13 @@ span {
   grid-row-gap: 1px;
 }
 
+.user-title-output {
+  font-size: 2em;
+  margin-bottom: 15px
+  
+
+}
+
 input {
   height: 3vh;
   /*border: 1px solid #606E71;*/
@@ -55,9 +62,16 @@ input::placeholder {
 
 
 
-.idea-output{
-  width: 100%;
+.user-idea-output{
+  width: 75%;
+  margin-bottom: 15px
 
+
+}
+
+li {
+  /*margin-top: 40px;*/
+  /*grid-template: 33% 33% 33% / 50% 25% 25%;*/
 }
 
 
@@ -81,5 +95,7 @@ input::placeholder {
 .idea-display{
   width: 50%;
   margin-left: 25%;
+  margin-top: 60px;
+  
 }
 
