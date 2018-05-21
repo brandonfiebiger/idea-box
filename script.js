@@ -45,8 +45,20 @@ function displayIdea(){
   // var getIdea = localStorage.getItem('');
 
 for(var i = 0; i < localStorage.length; i++){
-  var ideaOutput = localStorage.getItem(localStorage.key(i));
-  console.log(ideaOutput);
+  var ideaOutput[] = localStorage.getItem(localStorage.key(i));
+  var parsedList = JSON.parse(ideaOutput);
+  
+   $('.user-title-output').each(function(i){
+     $('.user-title-output').text(this.title[i]);
+   });
+
+    $('.user-title-output').text(parsedList.title);
+   console.log(parsedList.title);
+
+  // parsedList[i].title = $('.user-title-output').text;
+
+     $('.idea-display').prepend('<li><h1 class="user-title-output"></h1><p class="user-idea-output"></p><img class="up-vote" src="images/upvote.svg"><img class="down-vote" src="images/downvote.svg"><hr></li>');
+
 
 }
 
