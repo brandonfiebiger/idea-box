@@ -36,12 +36,19 @@ function addNewIdea(){
   localStorage.setItem(this.id, stringifiedIdea); 
   var retreivedIdea = localStorage.getItem(this.id);
   var parsedIdea = JSON.parse(retreivedIdea); 
-  console.log(parsedIdea);
+  var parsedtitle = parsedIdea.title;
+ 
+}
 
+
+function displayIdea(){
+  // var getIdea = localStorage.getItem('');
+
+for(var i = 0; i < localStorage.length; i++){
+  var ideaOutput = localStorage.getItem(localStorage.key(i));
+  console.log(ideaOutput);
 
 }
 
 
-
-
-         
+}
