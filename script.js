@@ -1,6 +1,7 @@
 
 var title = $('.user-title').val();
 var body = $('.user-idea').val();
+var quality = 'quality: swill';
 
 
 
@@ -8,6 +9,7 @@ var body = $('.user-idea').val();
 $('.save-button').on('click', function() {
    $('.user-title-output').text(title);
    $('.user-idea-output').text(body);
+   $('.user-quality').text(quality);
    addNewIdea();
 
 
@@ -18,6 +20,7 @@ $('.save-button').on('click', function() {
       <p class="user-idea-output"></p>
       <img class="up-vote" src="images/upvote.svg">
       <img class="down-vote" src="images/downvote.svg">
+      <p class="user-quality"></p>
       <hr>
     </li>
     `);
