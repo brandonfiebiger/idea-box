@@ -60,6 +60,8 @@ function addNewIdea(){
   var parsedtitle = parsedIdea.title;
  
 
+  clearInput();
+
   $('.delete-button').on('click', function() {
     $(this).closest('li').remove();
     localStorage.removeItem(id);
@@ -76,9 +78,6 @@ for(var i = 0; i < localStorage.length; i++){
   var lsKey = Object.keys(localStorage)[i];
   var ideaOutput = JSON.parse(localStorage[lsKey]);
 
-   
-
-
   $('.idea-display').prepend(`
     <li>
       <h1 class="user-title-output">
@@ -94,7 +93,11 @@ for(var i = 0; i < localStorage.length; i++){
       <hr>
     </li>
   `);
+
+  
 }
+
+
 
 
 
@@ -135,6 +138,8 @@ function entryCheck(){
 }
 
 
-
+   function clearInput(){
+            $('.user-title').val("");
+            $('.user-idea').val("");}
 
 
