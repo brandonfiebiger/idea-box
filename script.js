@@ -72,18 +72,18 @@ function addNewIdea(title,body,id){
       <hr>
     </li>
   `);
+  storeIdea();
+  clearInput();
+}
 
 
-
+ function storeIdea(){
   var ideaToStore = { id: newIdea.id, title: newIdea.title, body: newIdea.body, quality: newIdea.quality};
   var stringifiedIdea = JSON.stringify(ideaToStore);
   localStorage.setItem(newIdea.id, stringifiedIdea); 
-  var retreivedIdea = localStorage.getItem(newIdea.id);
-  var parsedIdea = JSON.parse(retreivedIdea); 
-  var parsedtitle = parsedIdea.title;
+}
  
 
-  clearInput();
 
   $('.delete-button').on('click', function() {
     $(this).closest('li').remove();
@@ -92,8 +92,16 @@ function addNewIdea(title,body,id){
 
 
 
+  function retrieveIdea(){
+    var retreivedIdea = localStorage.getItem(newIdea.id);
+    var parsedIdea = JSON.parse(retreivedIdea); 
+    var parsedtitle = parsedIdea.title;
+  }
 
-}
+
+
+
+
 
 
 function displayIdea(){
