@@ -75,7 +75,7 @@ li {
 }
 
 
-.up-vote, .down-vote{
+.up-vote, .down-vote, .delete-button{
   width: 2vw;
 
 }
@@ -97,5 +97,9 @@ li {
   margin-left: 25%;
   margin-top: 60px;
   
+}
+
+.delete-button {
+  display: inline;
 }
 
