@@ -46,16 +46,39 @@ $('.save-button').on('click', function() {
 
 
 
-function addNewIdea(){
+
+function Idea(title,body,id){
   this.id = $.now();
   this.title = $('.user-title').val();
   this.body = $('.user-idea').val();
-  this.quality = $('.user-quality').val();
+  this.quality = "swill";
+}
 
-  var ideaToStore = { id: this.id, title: this.title, body: this.body, quality: this.quality};
+
+function addNewIdea(title,body,id){
+ newIdea = new Idea(title, body, id);
+   $('.idea-display').prepend(`
+    <li class="${newIdea.id}">
+      <h1 class="user-title-output">
+        ${newIdea.title}
+      </h1>
+      <img src="images/delete.svg" class="delete-button">
+      <p class="user-idea-output">
+        ${newIdea.title}
+      </p>
+      <img class="up-vote" src="images/upvote.svg">
+      <img class="down-vote" src="images/downvote.svg">
+      <p class="user-quality"></p>
+      <hr>
+    </li>
+  `);
+
+
+
+  var ideaToStore = { id: newIdea.id, title: newIdea.title, body: newIdea.body, quality: newIdea.quality};
   var stringifiedIdea = JSON.stringify(ideaToStore);
-  localStorage.setItem(this.id, stringifiedIdea); 
-  var retreivedIdea = localStorage.getItem(this.id);
+  localStorage.setItem(newIdea.id, stringifiedIdea); 
+  var retreivedIdea = localStorage.getItem(newIdea.id);
   var parsedIdea = JSON.parse(retreivedIdea); 
   var parsedtitle = parsedIdea.title;
  
