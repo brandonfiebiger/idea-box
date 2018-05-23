@@ -7,6 +7,7 @@ var upVote = $('.up-vote');
 
 
 
+
 $('.save-button').on('click', function() {
    $('.user-title-output').text(title);
    $('.user-idea-output').text(body);
@@ -37,7 +38,7 @@ $('.save-button').on('click', function() {
 
    $('.delete-button').on('click', function() {
     $(this).closest('li').remove();
-    localStorage.removeItem(this.id);
+    localStorage.removeItem(id);
 })
 
 });
@@ -64,7 +65,7 @@ function displayIdea(){
 for(var i = 0; i < localStorage.length; i++){
   var lsKey = Object.keys(localStorage)[i];
   var ideaOutput = JSON.parse(localStorage[lsKey]);
-  console.log(ideaOutput.title);
+
    
 
 
@@ -83,12 +84,16 @@ for(var i = 0; i < localStorage.length; i++){
       <hr>
     </li>
   `);
-  }
-     $('.delete-button').on('click', function() {
-    console.log('shiss');
-    $(this).closest('li').remove();
-      localStorage.removeItem(this);
+}
+
+$('.delete-button').on('click', function() {
+  $(this).closest('li').remove();
+  localStorage.removeItem(id);
 })
+
+
+
+
 }
 
 function qualityDown() {
