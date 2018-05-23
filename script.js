@@ -58,6 +58,15 @@ function addNewIdea(){
   var parsedIdea = JSON.parse(retreivedIdea); 
   var parsedtitle = parsedIdea.title;
  
+
+  $('.delete-button').on('click', function() {
+    $(this).closest('li').remove();
+    localStorage.removeItem(id);
+  })
+
+
+
+
 }
 
 
@@ -86,10 +95,7 @@ for(var i = 0; i < localStorage.length; i++){
   `);
 }
 
-$('.delete-button').on('click', function() {
-  $(this).closest('li').remove();
-  localStorage.removeItem(id);
-})
+
 
 
 
