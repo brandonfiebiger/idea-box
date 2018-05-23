@@ -12,7 +12,8 @@ $('.save-button').on('click', function() {
    $('.user-title-output').text(title);
    $('.user-idea-output').text(body);
    $('.user-quality').text(quality);
-   addNewIdea();
+   entryCheck();
+  
 
 
 
@@ -124,7 +125,14 @@ function qualityUp() {
 
 
 
-
+function entryCheck(){
+  if ($('.user-title').val() === "" || $('.user-idea').val() === "" ){
+    alert("Title and Body Entry Required!");
+    return;
+  } else {
+    addNewIdea();
+  }
+}
 
 
 
