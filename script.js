@@ -18,6 +18,7 @@ $('.save-button').on('click', function() {
    $('.idea-display').prepend(`
     <li>
       <h1 class="user-title-output"></h1>
+      <img src="images/delete.svg" class="delete-button">
       <p class="user-idea-output"></p>
       <img class="up-vote" src="images/upvote.svg" type="button">
       <img class="down-vote" src="images/downvote.svg">
@@ -34,8 +35,14 @@ $('.save-button').on('click', function() {
       qualityDown();
    })
 
+   $('.delete-button').on('click', function() {
+    $(this).closest('li').remove();
+    localStorage.removeItem(this.id);
+})
 
 });
+
+
 
 function addNewIdea(){
   this.id = $.now();
@@ -66,6 +73,7 @@ for(var i = 0; i < localStorage.length; i++){
       <h1 class="user-title-output">
         ${ideaOutput.title}
       </h1>
+      <img src="images/delete.svg" class="delete-button">
       <p class="user-idea-output">
         ${ideaOutput.body}
       </p>
@@ -76,6 +84,11 @@ for(var i = 0; i < localStorage.length; i++){
     </li>
   `);
   }
+     $('.delete-button').on('click', function() {
+    console.log('shiss');
+    $(this).closest('li').remove();
+      localStorage.removeItem(this);
+})
 }
 
 function qualityDown() {
