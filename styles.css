@@ -1,6 +1,5 @@
 body {
-  font-family: 'Open Sans';
-  font-weight: 400;
+  font-family: 'Open Sans', sans-serif; 
   height: 100vh;
 }
 
@@ -9,6 +8,7 @@ body {
   height: 35vh;
   display: grid;
   grid-template: 15% 15% 15% 15% 40%  / 25% 50% 25%;
+  margin-bottom: 18px;
 }
 
 .idea-header {
@@ -36,9 +36,7 @@ span {
 
 .user-title-output {
   font-size: 2em;
-  margin-bottom: 15px
-  
-
+  margin-bottom: 15px;
 }
 
 input {
@@ -64,15 +62,10 @@ input::placeholder {
 
 .user-idea-output{
   width: 75%;
-  margin-bottom: 15px
-
-
+  margin-bottom: 15px;
 }
 
-li {
-  /*margin-top: 40px;*/
-  /*grid-template: 33% 33% 33% / 50% 25% 25%;*/
-}
+
 
 
 .up-vote, .down-vote, .delete-button{
@@ -81,14 +74,14 @@ li {
 }
 
 .search-bar{
-    width: 50%;
+
+  width: 50%;
    margin-left: 25%;
    
 }
 
 
 .lower-half{
-  /*margin: auto;*/
  width: 100%; 
 }
 
@@ -100,6 +93,11 @@ li {
 }
 
 .delete-button {
-  display: inline;
+  float: right;
+}
+
+h1 {
+  display: inline-block;
+
 }
 
