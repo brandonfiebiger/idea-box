@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans'; 
+  font-family: 'Open Sans', sans-serif; 
   height: 100vh;
   width: 100%;
   margin: 0;
@@ -143,7 +143,7 @@ input::placeholder {
 h1 {
   display: inline-block;
   margin: 0;
-  margin-left:;
+  font-family: 'Roboto Slab';
 
 }
 
@@ -203,10 +203,11 @@ h1 {
 @media screen and (max-width: 510px) {
 
   .user-idea {
-    height: 90px;
+    /*height: 60px;*/
     margin-top: 0px;
     width: 150%;
     margin-bottom: 0px;
+    padding-bottom: 60px;
   }
 
  .idea-display {
@@ -263,6 +264,8 @@ h1 {
     margin-bottom: 48px;
     font-size: 20px;
     width: 170%;
+    /*margin-left: 0%*/
+    /*margin-right: 35%;*/
   }
 
   .up-vote, .down-vote, .delete-button{
@@ -276,6 +279,10 @@ h1 {
   .user-idea {
     width: 170%;
   }
+
+  .search-bar {
+    width: 69%;
+    margin-left: 17%;
 
 }
 
