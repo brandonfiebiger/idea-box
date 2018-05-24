@@ -3,18 +3,6 @@ var body = $(".user-idea").val();
 var quality = $(".user-quality");
 var upVote = $(".up-vote");
 
-$(".save-button").on("click", function() {
-  entryCheck();})
-
-$(".up-vote").on("click", function() {
-  qualityUp();
-  });
-  
-$(".down-vote").on("click", function() {
-  qualityDown();
-  });
-
-
 $(document).ready(function() {
   if (localStorage.length > 0) {
     for (var i = 0; i < localStorage.length; i++) {
@@ -156,7 +144,7 @@ function qualityDown() {
   }
 }
 
-function qualityUp(quality) {
+function qualityUp() {
   if (this.quality = "swill") {
     $(".user-quality").text("plausible");
     this.quality = "plausible";
