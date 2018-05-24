@@ -3,23 +3,17 @@ var body = $(".user-idea").val();
 var quality = $(".user-quality");
 var upVote = $(".up-vote");
 
-$(".delete-button").on("click", function() {
-deleteIdea();
-});
-
 $(".save-button").on("click", function() {
-  entryCheck();
+  entryCheck();})
+
+$(".up-vote").on("click", function() {
+  qualityUp();
+  });
   
-
-  $(".up-vote").on("click", function() {
-    qualityUp();
-  });
-  $(".down-vote").on("click", function() {
-    qualityDown();
+$(".down-vote").on("click", function() {
+  qualityDown();
   });
 
-  $(".delete-button").on("click", deleteIdea);
-});
 
 $(document).ready(function() {
   if (localStorage.length > 0) {
@@ -27,16 +21,18 @@ $(document).ready(function() {
       var lsKey = Object.keys(localStorage)[i];
       var ideaOutput = JSON.parse(localStorage[lsKey]);
       var newList = Object.values(ideaOutput);
-      newList.map(function(obj){
-        console.log(obj[0]);
-        $(".idea-display").prepend(`
+      ideaTitle = newList[1];
+      ideaBody = newList[2]
+      
+      newList.forEach(function() {
+        var newCard = $(".idea-display").prepend(`
         <li>
           <h1 class="user-title-output">
-            ${obj[0]}
+            ${ideaTitle}
           </h1>
           <img src="images/delete.svg" class="delete-button">
           <p class="user-idea-output">
-            ${body[1]}
+            ${ideaBody}
           </p>
           <img class="up-vote" src="images/upvote.svg">
           <img class="down-vote" src="images/downvote.svg">
@@ -44,21 +40,27 @@ $(document).ready(function() {
           <hr>
         </li>
       `);
-      })
+      });
     }
+    $('.delete-button').on('click', function() {
+      $(this).closest("li").remove();
+      localStorage.removeItem(newList[0]);
+    })
+  
+    $(".save-button").on("click", function() {
+      entryCheck();})
+    
+    $(".up-vote").on("click", function() {
+      qualityUp();
+      });
+      
+    $(".down-vote").on("click", function() {
+      qualityDown();
+      });
   }
+
 });
 
-function deleteIdea(id) {
-  if (localStorage.length > 0) {
-    for (var i = 0; i < localStorage.length; i++) {
-      var lsKey = Object.keys(localStorage)[i];
-      var ideaOutput = JSON.parse(localStorage[lsKey]);
-       $(this).closest("li").remove();
-        localStorage.removeItem(lsKey);
-      }
-  }
-}
 
 function Idea(title, body, id) {
   this.id = $.now();
@@ -76,7 +78,7 @@ function addNewIdea(title, body, id) {
       </h1>
       <img src="images/delete.svg" class="delete-button">
       <p class="user-idea-output">
-        ${newIdea.title}
+        ${newIdea.body}
       </p>
       <img class="up-vote" src="images/upvote.svg">
       <img class="down-vote" src="images/downvote.svg">
@@ -154,11 +156,11 @@ function qualityDown() {
   }
 }
 
-function qualityUp() {
-  if ((this.quality = "swill")) {
+function qualityUp(quality) {
+  if (this.quality = "swill") {
     $(".user-quality").text("plausible");
     this.quality = "plausible";
-  } else if ((this.quality = "plausible")) {
+  } else if (this.quality = "plausible") {
     $(".user-quality").text("Genius");
     this.quality = "Genius";
   }

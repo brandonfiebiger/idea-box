@@ -1,6 +1,14 @@
+h1 {
+  display: inline-block;
+}
+
 body {
   font-family: 'Open Sans', sans-serif; 
   height: 100vh;
+}
+
+span {
+  color: #606E71;
 }
 
 .form-area {
@@ -20,12 +28,6 @@ body {
   font-weight: 700;
   font-family: 'Roboto Slab';
   margin-top: 3vh;
-
-
-}
-
-span {
-  color: #606E71;
 }
 
 .user-input-form {
@@ -41,7 +43,6 @@ span {
 
 input {
   height: 3vh;
-  /*border: 1px solid #606E71;*/
   margin-bottom: 1vh;
 }
 
@@ -58,26 +59,18 @@ input::placeholder {
    color: #FFFFFF;
 }
 
-
-
 .user-idea-output{
   width: 75%;
   margin-bottom: 15px;
 }
 
-
-
-
 .up-vote, .down-vote, .delete-button{
   width: 2vw;
-
 }
 
 .search-bar{
-
-  width: 50%;
-   margin-left: 25%;
-   
+   width: 50%;
+   margin-left: 25%;  
 }
 
 
@@ -88,16 +81,11 @@ input::placeholder {
 .idea-display{
   width: 50%;
   margin-left: 25%;
-  margin-top: 60px;
-  
+  margin-top: 60px; 
 }
 
 .delete-button {
   float: right;
 }
 
-h1 {
-  display: inline-block;
-
-}
 
