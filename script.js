@@ -1,7 +1,6 @@
 var title = $(".user-title").val();
 var body = $(".user-idea").val();
 var quality = $(".user-quality");
-var upVote = $(".up-vote");
 
 $(document).ready(function() {
   if (localStorage.length > 0) {
@@ -111,28 +110,6 @@ function retrieveIdea(id) {
   }
 }
 
-function displayIdea() {
-  for (var i = 0; i < localStorage.length; i++) {
-    var lsKey = Object.keys(localStorage)[i];
-    var ideaOutput = JSON.parse(localStorage[lsKey]);
-
-    $(".idea-display").prepend(`
-    <li>
-      <h1 class="user-title-output">
-        ${ideaOutput.title}
-      </h1>
-      <img src="images/delete.svg" class="delete-button">
-      <p class="user-idea-output">
-        ${ideaOutput.body}
-      </p>
-      <img class="up-vote" src="images/upvote.svg">
-      <img class="down-vote" src="images/downvote.svg">
-      <p class="user-quality"></p>
-      <hr>
-    </li>
-  `);
-  }
-}
 
 function qualityDown() {
   if ((this.quality = "swill")) {
