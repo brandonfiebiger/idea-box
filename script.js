@@ -1,26 +1,24 @@
 
 var title = $('.user-title').val();
 var body = $('.user-idea').val();
-var quality = 'quality: swill';
+var quality = $('.user-quality');
 var upVote = $('.up-vote');
 
 
   $('.delete-button').on('click', function() {
+    deleteIdea();
     $(this).closest('li').remove();
     
 })
 
 
 $('.save-button').on('click', function() {
-   // $('.user-title-output').text(title);
-   // $('.user-idea-output').text(body);
-   // $('.user-quality').text(quality);
-   // entryCheck();
+   entryCheck();
    addNewIdea();
   
-   $('.up-vote').on('click', function(event) {
+   $('.up-vote').on('click', function() {
       qualityUp();
-      console.log(event.target);
+     
 });
    $('.down-vote').on('click', function() {
       qualityDown();
@@ -31,35 +29,37 @@ $('.save-button').on('click', function() {
 });
 
 
-  // ${document}.ready(function(){
-  //   if(localStorage.length > 0){
-  //   for(var i = 0; i < localStorage.length; i++){
-  //   var lsKey = Object.keys(localStorage)[i];
-  //   var ideaOutput = JSON.parse(localStorage[lsKey]);
-  //   console.log(lsKey);
-
 
     $(document).ready(function(){
       if(localStorage.length > 0){
         for(var i = 0; i < localStorage.length; i++){
     var lsKey = Object.keys(localStorage)[i];
     var ideaOutput = JSON.parse(localStorage[lsKey]);
+    console.log(ideaOutput);
+
     }
     }
   })
 
+
+ 
  
 
- function deleteIdea(){
+ function deleteIdea(id){ 
   
 if(localStorage.length > 0){
         for(var i = 0; i < localStorage.length; i++){
     var lsKey = Object.keys(localStorage)[i];
     var ideaOutput = JSON.parse(localStorage[lsKey]);
+   
+
+  $(this).closest('li').remove();
+
+
 }
-  localStorage.removeItem(this.lsKey);
-  $().closest('li').remove();
- 
+  
+
+   
 
 
 }
@@ -88,7 +88,9 @@ function addNewIdea(title,body,id){
       </p>
       <img class="up-vote" src="images/upvote.svg">
       <img class="down-vote" src="images/downvote.svg">
-      <p class="user-quality"></p>
+      <p class="user-quality">
+      ${newIdea.quality}
+      </p>
       <hr>
     </li>
   `);
@@ -97,7 +99,7 @@ function addNewIdea(title,body,id){
 
   storeIdea();
   retrieveIdea();
-  // clearInput();
+  clearInput();
 }
 
 
@@ -108,7 +110,6 @@ function addNewIdea(title,body,id){
     for(var i = 0; i < localStorage.length; i++){
     var lsKey = Object.keys(localStorage)[i];
     var ideaOutput = JSON.parse(localStorage[lsKey]);
-    console.log(ideaOutput);
 
     }
 
@@ -183,8 +184,10 @@ function qualityDown() {
 function qualityUp() {
   if (this.quality = 'swill') {
     $('.user-quality').text('plausible');
+    this.quality = 'plausible';
   } else if (this.quality = 'plausible') {
     $('.user-quality').text('Genius');
+    this.quality = 'Genius';
   }
 }
 
@@ -192,18 +195,18 @@ function qualityUp() {
 
 
 
-// function entryCheck(){
-//   if ($('.user-title').val() === "" || $('.user-idea').val() === "" ){
-//     alert("Title and Body Entry Required!");
-//     return;
-//   } else {
-//     addNewIdea();
-//   }}
+ function entryCheck(){
+   if ($('.user-title').val() === "" || $('.user-idea').val() === "" ){
+     alert("Title and Body Entry Required!");
+     return;
+   } else {
+     addNewIdea();
+ }}
 
 
 
-   // function clearInput(){
-   //          $('.user-title').val("");
-   //          $('.user-idea').val("");}
+    function clearInput(){
+             $('.user-title').val("");
+             $('.user-idea').val("");}
 
 
