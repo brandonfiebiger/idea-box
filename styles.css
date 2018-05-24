@@ -1,27 +1,48 @@
 body {
   font-family: 'Open Sans', sans-serif; 
   height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+hr {
+  color: #D1D3D4;
+  width: 110%;
 }
 
 .form-area {
   background-color: #E5F3F2;
-  height: 35vh;
+  height: 40vh;
   display: grid;
   grid-template: 15% 15% 15% 15% 40%  / 25% 50% 25%;
   margin-bottom: 18px;
+  color: #9FA1A4;
+  max-width: 100vw;
+
 }
 
 .idea-header {
   text-align: center;
   color:#00A79D;
   grid-area: 1 / 2 / 1 / 3;
-  justify-content: center;
-  font-size: 3em;
+  font-size: 400%;
   font-weight: 700;
   font-family: 'Roboto Slab';
   margin-top: 3vh;
+}
 
+.user-title {
+  margin-top: 20px;
+  width: 100%;
+  border: 1px solid #D1D2D4;
+}
 
+.user-idea {
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid #D1D2D4;
 }
 
 span {
@@ -32,16 +53,17 @@ span {
   grid-area: 3 / 2/ 5 / 3;
   display: grid;
   grid-row-gap: 1px;
+  padding-left: 0%;
 }
 
 .user-title-output {
-  font-size: 2em;
-  margin-bottom: 15px;
+  font-size: 20px;
+  margin-bottom: 25px;
+  margin-left: 5px;
 }
 
 input {
-  height: 3vh;
-  /*border: 1px solid #606E71;*/
+  height: 5vh;
   margin-bottom: 1vh;
 }
 
@@ -56,39 +78,57 @@ input::placeholder {
    background-color: #4CA59E;
    height: 5vh;
    color: #FFFFFF;
+   margin-top: 10px;
+   height: 120%
 }
 
+.save-button:hover {
+  background-color: #2A5D56;
+}
 
-
-.user-idea-output{
+.user-idea-output {
   width: 75%;
-  margin-bottom: 15px;
+  margin-bottom: 55px;
+  color: #9FA1A4;
+  font-size:14px;
+  margin-left: 14px;
 }
 
 
 
 
-.up-vote, .down-vote, .delete-button{
-  width: 2vw;
+.up-vote, .down-vote, .delete-button {
+  width: 5%;
+  margin-left: 15px;
+  margin-bottom: 10px;
 
 }
 
-.search-bar{
+.up-vote:hover {
+  content:url("images/upvote-hover.svg");
+}
+
+.down-vote:hover {
+  content:url("images/downvote-hover.svg");
+}
+
+.search-bar {
 
   width: 50%;
-   margin-left: 25%;
+  margin-left: 25%;
+  border: 1px solid #D1D2D4;
    
 }
 
 
-.lower-half{
+.lower-half {
  width: 100%; 
 }
 
 .idea-display{
-  width: 50%;
-  margin-left: 25%;
-  margin-top: 60px;
+  width: 45%;
+  margin-left: 26%;
+  margin-top: 20px;
   
 }
 
@@ -96,8 +136,160 @@ input::placeholder {
   float: right;
 }
 
+.delete-button:hover {
+  content:url("images/delete-hover.svg");
+}
+
 h1 {
   display: inline-block;
+  margin: 0;
+  font-family: 'Roboto Slab';
 
 }
+
+@media screen and (max-width: 1100px) {
+
+  .up-vote, .down-vote, .delete-button {
+  width: 7%;
+  }
+}
+
+
+@media screen and (max-width: 666px) {
+  
+  .idea-header {
+    font-size: 390%;
+  } 
+
+  .user-title {
+  margin-top: 15px;
+  width: 120%;
+  }
+
+  .user-idea {
+    margin-top: 10px;
+    width: 120%;
+    margin-left: 0%;
+  }
+
+  .save-button {
+    width: 120%;
+    margin-right: 20%;
+  }
+
+  .user-input-form {
+    padding-left: 0px;
+    padding-right: 15px;
+  }
+
+  .search-bar {
+    width: 57%;
+  }
+
+  .up-vote, .down-vote, .delete-button {
+  width: 9%;
+  }
+
+.idea-display {
+  width: 55%;
+  margin-left: 23%;
+  margin-top: 20px;
+  
+  }
+
+}
+
+
+@media screen and (max-width: 510px) {
+
+  .user-idea {
+    /*height: 60px;*/
+    margin-top: 0px;
+    width: 150%;
+    margin-bottom: 0px;
+    padding-bottom: 60px;
+  }
+
+ .idea-display {
+  width: 65%;
+  margin-left: 18%;
+  margin-top: 20px;
+  
+  }
+
+  .idea-header {
+    margin-top: 0px;
+    font-size: 225%;
+  }
+
+  .user-title {
+    margin-top: 10px;
+    width: 150%;
+  }
+
+  .save-button {
+    margin-bottom: 35px;
+    width: 150%;
+    height: 50%;
+    font-size: 24px;
+  }
+
+  .user-input-form {
+    padding-right: 55px;
+    grid-area: 2 / 1 / 4 / 3;
+    padding-left:55px;
+  }
+
+  .form-area {
+    padding-top: 20px;
+  }
+
+  .search-bar {
+    width: 65%;
+    margin-left: 13%;
+  }
+
+  .up-vote, .down-vote, .delete-button{
+  width: 12%;
+  }
+
+}
+
+
+
+@media screen and (max-height: 568px) {
+
+  .save-button {
+    height: 33%;
+    margin-bottom: 48px;
+    font-size: 20px;
+    width: 170%;
+    /*margin-left: 0%*/
+    /*margin-right: 35%;*/
+  }
+
+  .up-vote, .down-vote, .delete-button{
+  width: 7%;
+  }
+
+  .user-title {
+    width: 170%;
+  }
+
+  .user-idea {
+    width: 170%;
+  }
+
+  .search-bar {
+    width: 69%;
+    margin-left: 17%;
+
+}
+
+
+
+
+
+
+
 
