@@ -1,3 +1,7 @@
+h1 {
+  display: inline-block;
+}
+
 body {
   font-family: 'Open Sans', sans-serif; 
   height: 100vh;
@@ -10,6 +14,10 @@ body {
 hr {
   color: #D1D3D4;
   width: 110%;
+}
+
+span {
+  color: #606E71;
 }
 
 .form-area {
@@ -31,6 +39,8 @@ hr {
   font-weight: 700;
   font-family: 'Roboto Slab';
   margin-top: 3vh;
+
+
 }
 
 .user-title {
@@ -47,6 +57,7 @@ hr {
 
 span {
   color: #606E71;
+
 }
 
 .user-input-form {
@@ -63,6 +74,7 @@ span {
 }
 
 input {
+
   height: 5vh;
   margin-bottom: 1vh;
 }
@@ -82,9 +94,6 @@ input::placeholder {
    height: 120%
 }
 
-.save-button:hover {
-  background-color: #2A5D56;
-}
 
 .user-idea-output {
   width: 75%;
@@ -93,6 +102,8 @@ input::placeholder {
   font-size:14px;
   margin-left: 14px;
 }
+
+
 
 
 
@@ -117,7 +128,7 @@ input::placeholder {
   width: 50%;
   margin-left: 25%;
   border: 1px solid #D1D2D4;
-   
+  
 }
 
 
@@ -126,6 +137,8 @@ input::placeholder {
 }
 
 .idea-display{
+
+
   width: 45%;
   margin-left: 26%;
   margin-top: 20px;
