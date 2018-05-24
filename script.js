@@ -2,33 +2,7 @@ var title = $(".user-title").val();
 var body = $(".user-idea").val();
 var quality = $(".user-quality");
 
-$(document).ready(function() {
-  if (localStorage.length > 0) {
-    for (var i = 0; i < localStorage.length; i++) {
-      var lsKey = Object.keys(localStorage)[i];
-      var ideaOutput = JSON.parse(localStorage[lsKey]);
-      var newList = Object.values(ideaOutput);
-      ideaTitle = newList[1];
-      ideaBody = newList[2]
-      
-      newList.forEach(function() {
-        var newCard = $(".idea-display").prepend(`
-        <li>
-          <h1 class="user-title-output">
-            ${ideaTitle}
-          </h1>
-          <img src="images/delete.svg" class="delete-button">
-          <p class="user-idea-output">
-            ${ideaBody}
-          </p>
-          <img class="up-vote" src="images/upvote.svg">
-          <img class="down-vote" src="images/downvote.svg">
-          <p class="user-quality"></p>
-          <hr>
-        </li>
-      `);
-      });
-    }
+
     $('.delete-button').on('click', function() {
       $(this).closest("li").remove();
       localStorage.removeItem(newList[0]);
@@ -44,9 +18,38 @@ $(document).ready(function() {
     $(".down-vote").on("click", function() {
       qualityDown();
       });
-  }
 
-});
+
+
+
+
+
+$(document).ready(function() {
+  if (localStorage.length > 0) {
+    for (var i = 0; i < localStorage.length; i++) {
+      var lsKey = Object.keys(localStorage)[i];
+      var ideaOutput = JSON.parse(localStorage[lsKey]);
+      ideaTitle = ideaOutput.title;
+      ideaBody = ideaOutput.body;
+        var newCard = $(".idea-display").prepend(`
+        <li>
+          <h1 class="user-title-output">
+            ${ideaTitle}
+          </h1>
+          <img src="images/delete.svg" class="delete-button">
+          <p class="user-idea-output">
+            ${ideaBody}
+          </p>
+          <img class="up-vote" src="images/upvote.svg">
+          <img class="down-vote" src="images/downvote.svg">
+          <p class="user-quality"></p>
+          <hr>
+        </li>
+      `);
+      };
+    }});
+
+  
 
 
 function Idea(title, body, id) {
@@ -89,13 +92,7 @@ $(".delete-button").on("click", function() {
 });
 
 function storeIdea() {
-  var ideaToStore = {
-    id: newIdea.id,
-    title: newIdea.title,
-    body: newIdea.body,
-    quality: newIdea.quality
-  };
-  var stringifiedIdea = JSON.stringify(ideaToStore);
+  var stringifiedIdea = JSON.stringify(newIdea);
   localStorage.setItem(newIdea.id, stringifiedIdea);
 }
 
@@ -112,20 +109,20 @@ function retrieveIdea(id) {
 
 
 function qualityDown() {
-  if ((this.quality = "swill")) {
+  if (this.quality === "swill") {
     $(".user-quality").text("swill");
-  } else if ((this.quality = "plausible")) {
+  } else if (this.quality === "plausible") {
     $(".user-quality").text("swill");
-  } else if ((this.quality = "Genius")) {
+  } else if (this.quality ==="Genius") {
     $(".user-quality").text("plausible");
   }
 }
 
 function qualityUp() {
-  if (this.quality = "swill") {
+  if (this.quality === "swill") {
     $(".user-quality").text("plausible");
     this.quality = "plausible";
-  } else if (this.quality = "plausible") {
+  } else if (this.quality === "plausible") {
     $(".user-quality").text("Genius");
     this.quality = "Genius";
   }
